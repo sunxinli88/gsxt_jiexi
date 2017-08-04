@@ -1,4 +1,4 @@
-package com.gxst.service.fujian.info;
+package com.gxst.service.hebei.info;
 
 import java.sql.SQLException;
 import java.util.List;
@@ -20,13 +20,13 @@ public class Table01 {
 	}
 	private static void getTb() {
 		List<Map<String, Object>> htmls = db_local2
-				.excuteQuery("select html_tab06_text from company_fujian", null);
+				.excuteQuery("select icbc_reference_info_text from company_url_hb", null);
 
 		for (Map<String, Object> html : htmls) {
-			if (html.get("html_tab06_text") == null) {
+			if (html.get("icbc_reference_info_text") == null) {
 				continue;
 			}
-			String mainHtml = html.get("html_tab06_text").toString();
+			String mainHtml = html.get("icbc_reference_info_text").toString();
 			Document doc = Jsoup.parse(mainHtml);
 
 			//

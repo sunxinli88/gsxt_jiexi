@@ -1,4 +1,4 @@
-package com.gxst.service.fujian.info;
+package com.gxst.service.heilongjiang.info;
 
 import java.sql.SQLException;
 import java.util.List;
@@ -9,9 +9,10 @@ import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
+import com.gxst.service.data.Paramters;
 import com.gxst.util.ConnectionDB;
 
-public class Table01 {
+public class GetInfoTab01 {
 	private static ConnectionDB db_local2 = new ConnectionDB(
 			"jdbc:mysql://localhost:3306/db_gsxt?useUnicode=true&characterEncoding=utf8", "root", "123");
 	public static void main(String[] args) {
@@ -20,13 +21,13 @@ public class Table01 {
 	}
 	private static void getTb() {
 		List<Map<String, Object>> htmls = db_local2
-				.excuteQuery("select html_tab06_text from company_fujian", null);
+				.excuteQuery("select html_tab02_text from company_hlj", null);
 
 		for (Map<String, Object> html : htmls) {
-			if (html.get("html_tab06_text") == null) {
+			if (html.get("html_tab02_text") == null) {
 				continue;
 			}
-			String mainHtml = html.get("html_tab06_text").toString();
+			String mainHtml = html.get("html_tab02_text").toString();
 			Document doc = Jsoup.parse(mainHtml);
 
 			//

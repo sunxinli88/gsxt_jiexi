@@ -819,7 +819,6 @@ public class JiexiPage1 {
 		}
 
 		return map;
-
 	}
 
 }
